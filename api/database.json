@@ -1,0 +1,61 @@
+{
+    "computers": [
+        {
+            "id": 1,
+            "model": "Macbook Pro",
+            "year": 2015
+        },
+        {
+            "id": 2,
+            "model": "Dell XPS 15",
+            "year": 2019
+        },
+        {
+            "id": 3,
+            "model": "Lenovo ThinkPad X1 Carbon",
+            "year": 2021
+        },
+        {
+            "id": 4,
+            "model": "Microsoft Surface Laptop 4",
+            "year": 2020
+        },
+        {
+            "id": 5,
+            "model": "HP Spectre x360",
+            "year": 2018
+        }
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "firstName": "Rainu",
+            "lastName": "Ittycheriah",
+            "computerId": 1
+        },
+        {
+            "id": 2,
+            "firstName": "Emily",
+            "lastName": "Johnson",
+            "computerId": 2
+        },
+        {
+            "id": 3,
+            "firstName": "James",
+            "lastName": "Smith",
+            "computerId": 3
+        },
+        {
+            "id": 4,
+            "firstName": "Sophia",
+            "lastName": "Brown",
+            "computerId": 4
+        },
+        {
+            "id": 5,
+            "firstName": "Liam",
+            "lastName": "Wilson",
+            "computerId": 5
+        }
+    ]
+}
