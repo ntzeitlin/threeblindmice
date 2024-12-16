@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+}
+
+.employeelist {
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    flex-wrap: wrap;
+}
+
+.employee {
+    border: 1px dotted lightblue;
+    padding: 2em;
+    margin: 1em;
+    max-width: 25em;
+}

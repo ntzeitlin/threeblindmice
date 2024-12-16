@@ -14,12 +14,13 @@ export const generateEmployees = async () => {
             department: { name: departmentName },
             location: { city: officeCity }
         }) => {
-
+            // get all the employee-customer relationships
             const relationships = customerRelationships.filter(({ employeeId: id }) => id === employeeId)
-            console.log(relationships)
+            // filter to the relationships assigned to the employee
             const assignedCustomers = relationships.map(({ customer: { name: customerName } }) => {
                 return `<li>${customerName}</li>`
             }).join("")
+
             return `
     <div class="employee">
         <header class="employee__name"> 

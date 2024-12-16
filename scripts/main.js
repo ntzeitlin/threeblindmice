@@ -8,11 +8,12 @@ const render = async () => {
 
     const composedHTML = `
     <h1>Three Blind Mice Consulting</h1>
-
-    <section>
     <h2>Employees:</h2>
+    <section class="employeelist">
     ${employeeHTML}
     </section>
+
+
     `
 
     mainElement.innerHTML = composedHTML
