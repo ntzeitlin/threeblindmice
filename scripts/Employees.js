@@ -4,6 +4,7 @@ import { getData } from "./Data.js"
 
 export const generateEmployees = async () => {
     const employees = await getData("employees?_expand=computer&_expand=department&_expand=location")
+    const customerRelationships = await getData("employeeCustomers?_expand=customer")
 
     let employeeListHTML = ""
 
@@ -12,8 +13,14 @@ export const generateEmployees = async () => {
             computer: { model: model, year: year },
             department: { name: departmentName },
             location: { city: officeCity }
-        }) =>
-            `
+        }) => {
+
+            const relationships = customerRelationships.filter(({ employeeId: id }) => id === employeeId)
+            console.log(relationships)
+            const assignedCustomers = relationships.map(({ customer: { name: customerName } }) => {
+                return `<li>${customerName}</li>`
+            }).join("")
+            return `
     <div class="employee">
         <header class="employee__name"> 
             <h1>${firstN} ${lastN}</h1>
@@ -27,9 +34,17 @@ export const generateEmployees = async () => {
         <section class="emoployee__location">
             Works at the ${officeCity} office
         </section>
+        <section class='employee__customers'>
+            Has worked for the following customers:
+            <ul>
+                ${assignedCustomers}
+            </ul>
+        </section>
     </div>
 
-    `).join("")
+    `}
+
+    ).join("")
 
     return employeeListHTML
 }    
